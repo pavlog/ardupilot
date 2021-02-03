@@ -61,6 +61,9 @@ void SoftSigReaderRMT::init()
 #if CONFIG_HAL_BOARD_SUBTYPE == HAL_BOARD_SUBTYPE_ESP32_BUZZ
         .gpio_num = (gpio_num_t)4,
 #endif
+#if CONFIG_HAL_BOARD_SUBTYPE == HAL_BOARD_SUBTYPE_ESP32_ROVMIN
+        .gpio_num = (gpio_num_t)4,
+#endif
         .clk_div = RMT_CLK_DIV,
         .mem_block_num = 1
     };

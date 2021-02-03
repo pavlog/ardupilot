@@ -28,22 +28,14 @@
 #define PROBE_MAG_IMU_I2C(driver, imudev, bus, addr, args ...) ADD_BACKEND(DRIVER_ ##driver, AP_Compass_ ## driver::probe_ ## imudev(GET_I2C_DEVICE(bus,addr),##args))
 //------------------------------------
 
-#define HAL_INS_DEFAULT HAL_INS_ICM20XXX_I2C
-#define HAL_INS_ICM20XXX_I2C_BUS 0
-#define HAL_INS_ICM20XXX_I2C_ADDR (0x68)
-
-
-
-//#define HAL_BARO_DEFAULT HAL_BARO_MS5837_I2C
-//GPIO 34
-//#define HAL_BARO_ANALOG_PIN (6)
+#define HAL_INS_DEFAULT HAL_INS_HIL
 
 #define HAL_COMPASS_ICM20948_I2C_ADDR (0x68)
 #define HAL_COMPASS_AK09916_I2C_BUS 0
 #define HAL_COMPASS_AK09916_I2C_ADDR (0x0C)
 #define HAL_COMPASS_MAX_SENSORS 3
 
-#define HAL_INS_PROBE_LIST PROBE_IMU_I2C(Invensensev2, 0, 0x68, ROTATION_ROLL_180)
+//#define HAL_INS_PROBE_LIST PROBE_IMU_I2C(Invensensev2, 0, 0x69, ROTATION_ROLL_180)
 
 #define HAL_MAG_PROBE_LIST ADD_BACKEND(DRIVER_ICM20948, AP_Compass_AK09916::probe_ICM20948_I2C(0, ROTATION_ROLL_180_YAW_270));
 
@@ -107,6 +99,7 @@
 
 
 #define HAL_LOGGING_BACKENDS_DEFAULT 2
+
 
 
 

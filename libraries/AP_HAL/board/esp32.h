@@ -7,6 +7,10 @@
 #include "esp32buzz.h" //Buzz
 #elif CONFIG_HAL_BOARD_SUBTYPE == HAL_BOARD_SUBTYPE_ESP32_ICARUS
 #include "esp32icarus.h" //Alex
+#elif CONFIG_HAL_BOARD_SUBTYPE == HAL_BOARD_SUBTYPE_ESP32_ICARUS
+#include "esp32icarus.h" //Alex
+#elif CONFIG_HAL_BOARD_SUBTYPE == HAL_BOARD_SUBTYPE_ESP32_ROVMIN
+#include "esp32rovmin.h"
 #endif
 
 #define HAL_BOARD_NAME "ESP32"

@@ -17,6 +17,12 @@
 
 static AP_Filesystem fs;
 
+#if CONFIG_HAL_BOARD == HAL_BOARD_ESP32
+#include "AP_Filesystem_ESP32.h"
+static AP_Filesystem_ESP32 fs_local;
+#endif // HAL_BOARD_ESP32
+
+
 #if CONFIG_HAL_BOARD == HAL_BOARD_CHIBIOS
 #if HAVE_FILESYSTEM_SUPPORT
 #include "AP_Filesystem_FATFS.h"

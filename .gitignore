@@ -134,3 +134,5 @@ persistent.dat
 dumpstack_*out
 build.tmp.binaries/
 tasklist.json
+board.txt
+sdkconfig.old

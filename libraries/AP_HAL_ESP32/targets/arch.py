@@ -34,10 +34,11 @@ def processArchive(mapping, in_arch):
     counting = dict()
     result = []
     for line in lines.splitlines():
-        if not line in counting:
-            counting[line] = 0
-        counting[line] = counting[line] + 1
-        subprocess.call([ar_p, 'xN', str(counting[line]), in_arch,
+        fnLowerCase = line.lower()
+        if not fnLowerCase in counting:
+            counting[fnLowerCase] = 0
+        counting[fnLowerCase] = counting[fnLowerCase] + 1
+        subprocess.call([ar_p, 'xN', str(counting[fnLowerCase]), in_arch,
                         line])
         fname = line.split('.')[0]
         if fname in mapping:
